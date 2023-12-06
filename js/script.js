@@ -99,3 +99,62 @@ soccer_team.forEach((elem)=>{
 
 console.log(soccer_team);
 console.log(array);
+
+
+// SNACK-3 -------------------------->>
+
+// CREO UN ARRAI DI OGGETTI 
+let fashion_items = [
+    {
+        nome : 'Poppy',
+        type : 'tshirt',
+        color : 'red'
+    },
+    {
+        nome : 'Jumping',
+        type : 'occhiali',
+        color : 'blue'
+    },
+    {
+        nome : 'CrissCross',
+        type : 'scarpe',
+        color : 'black'
+    },
+    {
+        nome : 'Jenny',
+        type : 'borsa',
+        color : 'pink'
+    }
+]
+
+// CREO UNA FUNZIONE CHE MI GENERI UNA LETTERA CASUALE DELL'ALFABETO 
+function generateLetter(){
+
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+    let randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+
+    return randomLetter;
+}
+
+// CREO UN NUOVO ARRAY 
+let new_fashionItems = [];
+
+// FACCIO UN CICLO FOR EACH 
+fashion_items.forEach((elem)=>{
+
+    // aggiungo position con valore random lettera al singolo oggetto 
+    elem.position = generateLetter();
+
+    // prendo ogni elemento dall oggetto 
+    let {nome, type, color, position} = elem;
+
+    // lo pusho nel nuovo array 
+    new_fashionItems.push({nome, type, color, position});
+})
+
+console.log(fashion_items)
+
+console.log(new_fashionItems)
+
+
