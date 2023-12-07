@@ -132,7 +132,7 @@ function generateLetter(){
 
     let alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-    let randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+    let randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)+1];
 
     return randomLetter;
 }
@@ -144,13 +144,10 @@ let new_fashionItems = [];
 fashion_items.forEach((elem)=>{
 
     // aggiungo position con valore random lettera al singolo oggetto 
-    elem.position = generateLetter();
-
-    // prendo ogni elemento dall oggetto 
-    let {nome, type, color, position} = elem;
+    position = generateLetter();
 
     // lo pusho nel nuovo array 
-    new_fashionItems.push({nome, type, color, position});
+    new_fashionItems.push({position,...elem});
 })
 
 console.log(fashion_items)
